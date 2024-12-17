@@ -9,7 +9,7 @@ export default function HomeFirstSection() {
     <section className="relative w-full h-[85vh] flex flex-col items-center justify-center bg-home-mobile bg-cover bg-center bg-no-repeat bg-home-desktop">
       <div className="container w-full flex flex-col items-center justify-center gap-8 lg:items-start lg:justify-start 2xl:h-[50vh]">
         <motion.h1
-          className="h1 text-center !text-white !font-extrabold xs:text-5xl leading-none sm-lg:text-7xl lg:text-8xl lg:text-start"
+          className="h1 text-center !text-white !font-extrabold xs:text-6xl leading-none sm-lg:text-7xl lg:text-8xl lg:text-start"
           variants={fadeIn("up", 0.4)}
           initial="hidden"
           whileInView={"show"}
