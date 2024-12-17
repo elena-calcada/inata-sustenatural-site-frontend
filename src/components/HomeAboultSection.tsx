@@ -16,7 +16,7 @@ export default function HomeAboultSection() {
               whileInView={"show"}
               viewport={{ once: false, amount: 0.2 }}
             >
-              Sobre nós
+              O que é o Inata?
             </motion.h2>
             <div className="w-full flex flex-col gap-8 items-center justify-center xl:flex-row xl:gap-16">
               <motion.div
