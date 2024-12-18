@@ -11,7 +11,7 @@ export default {
       montserrat: 'var(--font-montserrat)',
     },
     backgroundImage: {
-      "home-desktop": 'url(/assets/initialImage.png)',
+      "home-desktop": 'url(/assets/initialImage2.png)',
     },
     screens: {
       'xs': { max: "639px" },

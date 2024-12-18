@@ -35,7 +35,7 @@ const SocialNav = ({ containerStyles, onClickCloseNav }: Props) => {
           className="text-primary"
         >
           <a target="_blank" onClick={onClickCloseNav}>
-            <FaInstagram className="h-9 w-9 text-blueColor-base" />
+            <FaInstagram className="h-9 w-9 xs:h-8 xs:w-8 text-blueColor-base" />
           </a>
         </Link>
       </motion.div>

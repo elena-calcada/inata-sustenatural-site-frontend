@@ -6,10 +6,10 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function HomeFirstSection() {
   return (
-    <section className="relative w-full h-[85vh] flex flex-col items-center justify-center bg-home-mobile bg-cover bg-center bg-no-repeat bg-home-desktop">
+    <section className="relative mt-[75px] w-full h-[85vh] flex flex-col items-center justify-center bg-home-mobile bg-cover bg-center bg-no-repeat bg-home-desktop">
       <div className="container w-full flex flex-col items-center justify-center gap-8 lg:items-start lg:justify-start 2xl:h-[50vh]">
         <motion.h1
-          className="h1 text-center !text-white !font-extrabold xs:text-6xl leading-none sm-lg:text-7xl lg:text-8xl lg:text-start"
+          className="h1 text-center !text-white !font-extrabold xs:text-[54px] leading-none sm-lg:text-7xl lg:text-8xl lg:text-start"
           variants={fadeIn("up", 0.4)}
           initial="hidden"
           whileInView={"show"}
@@ -18,7 +18,7 @@ export default function HomeFirstSection() {
           Inata Sustenatural
         </motion.h1>
         <motion.p
-          className="p !font-semibold text-center !text-white !text-base max-w-[500px] xs:max-w-[400px] lg:max-w-[900px] sm-lg:!text-xl lg:!text-xl lg:text-start"
+          className="p !font-semibold text-center !text-white !text-base max-w-[500px] xs:!text-base xs:max-w-[400px] lg:max-w-[900px] sm-lg:!text-xl lg:!text-xl lg:text-start"
           variants={fadeIn("up", 0.6)}
           initial="hidden"
           whileInView={"show"}

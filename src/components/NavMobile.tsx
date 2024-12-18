@@ -10,9 +10,9 @@ interface Props {
 const NavMobile = ({ containerStyles, onClickCloseNav }: Props) => {
 
   return (
-    <nav className={`${containerStyles}`}>
-      <Link href="/">Home</Link>
-      <Link href="/passeios">Passeios</Link>
+    <nav className={`${containerStyles} shadow-md`}>
+      <Link onClick={onClickCloseNav} href="/">Home</Link>
+      <Link onClick={onClickCloseNav} href="/passeios">Passeios</Link>
 
       <SocialNav onClickCloseNav={onClickCloseNav} containerStyles="flex gap-8 justify-center mt-6" />
     </nav>

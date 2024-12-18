@@ -40,13 +40,13 @@ const Header = () => {
   }, [])
 
   return (
-    <header className={`${headerActive ? 'h-[72px]' : 'h-20'} 'fixed w-full h-[80px] top-0 z-50 bg-background transition-all shadow-lg' ${shadow && 'fixed w-full h-[80px] top-0 z-50 transition-all shadow-lg'}`}>
+    <header className={`${headerActive ? 'h-[72px]' : 'h-[80px]'} ${!shadow && openNav && 'fixed w-full h-[72px] top-0 z-50 bg-background transition-all shadow-lg'} ${!shadow && !openNav && 'fixed w-full h-[72px] top-0 z-50 bg-background transition-all'} ${shadow && 'fixed w-full h-[72px] top-0 z-50 bg-background transition-all shadow-lg'}`}>
       <div className="px-[15px] md:px-[24px] lg:px-[64px] mx-auto h-full flex items-center justify-between xl:max-w-[1400px]">
         <Link href='/'>
           <Image src="/assets/logo.png" width={146} height={96} alt="Logo da Inata Sustenatural" />
         </Link>
 
-        <NavMobile onClickCloseNav={handleCloseNav} containerStyles={`${headerActive ? 'top-[70px]' : 'top-[80px]'} ${openNav ? 'max-h-max pt-8 pb-10 border-t border-black/10' : 'max-h-0 pt-0 pb-0 overflow-hidden border-black/0'} bg-white w-full left-0 flex flex-col gap-6 text-center fixed text-base text-titleColor font-semibold transition-all xl:hidden`} />
+        <NavMobile onClickCloseNav={handleCloseNav} containerStyles={`${headerActive ? 'top-[72px]' : 'top-[80px]'} ${openNav ? 'max-h-max pt-8 pb-10 border-t border-black/10' : 'max-h-0 pt-0 pb-0 overflow-hidden border-black/0'} bg-background w-full left-0 flex flex-col gap-6 text-center fixed text-base text-titleColor font-semibold transition-all xl:hidden`} />
 
         <Nav containerStyles="hidden xl:flex xl:items-center xl:justify-between gap-6 2xl:gap-8 text-base text-textColor font-semibold" />
         <SocialNav onClickCloseNav={handleCloseNav} containerStyles="hidden xl:flex" />
