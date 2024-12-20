@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "Inata Sustenatural",
     images: [
       {
-        url: "/openGraphImage4.png",
+        url: "/openGraphImage.png",
         alt: "Um conjunto de quatro imagens. A primeira mostra o salto de uma baleia jubarte no mar; a segunda é a vista do nascer do sol no Pico da Bandeira; a terceira mostra um grupo de pessoas em caiaques em um Manguezal, posando para a foto; a quarta mostra um casal em um barco passeando pelo manguezal ao por do sol."
       }
     ],
