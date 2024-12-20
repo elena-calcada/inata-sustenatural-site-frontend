@@ -15,11 +15,11 @@ export default function HomeAboultSection() {
             whileInView={"show"}
             viewport={{ once: false, amount: 0.2 }}
           >
-            O que é o Inata?
+            Quem é o Inata?
           </motion.h2>
           <div className="w-full flex flex-col gap-8 items-center justify-center xl:flex-row xl:gap-16">
             <motion.div
-              className={"relative shadow-xl w-[334px] h-[257px] md:w-[480px] md:h-[370px]"}
+              className={"relative shadow-xl w-[334px] h-[257px] md:w-[480px] md:h-[370px] xl:h-[450px]"}
               variants={fadeIn("up", 0.6)}
               initial="hidden"
               whileInView={"show"}
