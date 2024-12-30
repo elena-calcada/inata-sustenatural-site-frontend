@@ -26,8 +26,8 @@ export default function WhitherListSection() {
             whileInView={"show"}
             viewport={{ once: false, amount: 0.03 }}
           >
-            <div className="w-full p-4 sm:p-6 flex flex-col lg:flex-row lg:gap-8">
-              <div className="w-[380px] lg-xl:w-2/5 xl:w-1/4 min-h-[257px] mb-4 mx-auto relative">
+            <div className="w-full p-4 sm:p-6 flex flex-col items-center justify-center lg:flex-row lg:gap-8">
+              <div className="w-[337px] h-[228px] lg-xl:w-1/3 xl:w-1/4 lg:min-h-[228px] mb-4 lg:mb-0 mx-auto relative">
                 <Image
                   src="/assets/aboult.png"
                   style={{ objectFit: 'cover' }}
@@ -37,7 +37,7 @@ export default function WhitherListSection() {
                   className="z-40 absolute w-auto"
                 />
               </div>
-              <div className="lg-xl:w-3/5 xl:w-3/4 flex flex-col gap-4">
+              <div className="lg-xl:w-2/3 xl:w-3/4 flex flex-col gap-4">
                 <span className="font-bold text-xl text-center lg:text-start">Pico da Bandeira</span>
                 <p className="text-center lg:text-start">
                   Lorem ipsum dolor sit amet. Sed beatae quia id sapiente eius non magnam repellendus. Rem doloremque officia aut fugiat facere qui galisum provident sed dolores amet qui voluptas Quis nam omnis dolorem Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Sed beatae quia id sapiente eius non magnam repellendus. Rem doloremque officia aut fugiat facere qui galisum provident sed dolores amet qui voluptas Quis nam omnis dolorem Lorem ipsum dolor sit amet.
