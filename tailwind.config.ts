@@ -12,6 +12,7 @@ export default {
     },
     backgroundImage: {
       "home-desktop": 'url(/assets/initialImage2.png)',
+      "cover-whither": 'url(/assets/cover-whither.png)',
     },
     screens: {
       'xs': { max: "639px" },
