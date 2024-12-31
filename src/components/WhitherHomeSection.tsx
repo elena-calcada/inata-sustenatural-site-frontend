@@ -1,12 +1,24 @@
 "use client"
 import { fadeIn } from "@/utils/variants";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function WhitherHomeSection() {
   return (
-    <section className="relative mt-[75px] w-full h-[50vh] flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat bg-cover-whither">
+    <section className="relative mt-[75px] w-full h-[50vh] flex flex-col items-center justify-center">
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/assets/cover-whither.png"
+          alt="Capa da página inicial"
+          fill
+          quality={100}
+          priority
+          className="object-cover"
+        />
+      </div>
+
       <div className="container w-full flex flex-col items-center justify-center gap-4 2xl:gap-8 lg:items-start lg:justify-start">
         <motion.h1
           className="h1 text-center !text-white !font-bold xs:text-[54px] leading-none sm-lg:text-7xl lg:text-7xl 2xl:text-8xl lg:text-start"

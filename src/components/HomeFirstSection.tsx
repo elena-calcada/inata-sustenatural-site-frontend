@@ -1,12 +1,24 @@
 "use client"
 import { fadeIn } from "@/utils/variants";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function HomeFirstSection() {
   return (
-    <section className="relative mt-[75px] w-full h-[85vh] flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat bg-home-desktop">
+    <section className="relative mt-[75px] w-full h-[85vh] flex flex-col items-center justify-center">
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/assets/initialImage2.png"
+          alt="Capa da página inicial"
+          fill
+          quality={100}
+          priority
+          className="object-cover"
+        />
+      </div>
+
       <div className="container w-full flex flex-col items-center justify-center gap-8 lg:items-start lg:justify-start 2xl:h-[50vh]">
         <motion.h1
           className="h1 text-center !text-white !font-extrabold xs:text-[54px] leading-none sm-lg:text-7xl lg:text-8xl lg:text-start"
