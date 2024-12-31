@@ -1,9 +1,16 @@
 "use client"
+import { TourGroup } from "@/entities/TourGroup";
 import { fadeIn } from "@/utils/variants";
 import { motion } from "framer-motion";
 import WhitherCard from "./WhitherCard";
 
-export default function WhitherListSection() {
+interface WhitherProps {
+  listWhither: TourGroup[] | []
+}
+
+export default function WhitherListSection({ listWhither }: WhitherProps) {
+  const filteredListWhither = listWhither.filter(whither => whither.cover !== "");
+
   return (
     <section className="bg-background">
       <div className="overflow-hidden w-full h-full flex items-center justify-center">
@@ -17,15 +24,18 @@ export default function WhitherListSection() {
           >
             Nossos destinos
           </motion.h2>
-          <div className="flex flex-col gap-4">
-            <WhitherCard
-              src="/assets/aboult.png"
-              title="Pico da Bandeira"
-              description="Lorem ipsum dolor sit amet. Sed beatae quia id sapiente eius non magnam repellendus. Rem doloremque officia aut fugiat facere qui galisum provident sed dolores amet qui voluptas Quis nam omnis dolorem Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Sed beatae quia id sapiente eius non magnam repellendus. Rem doloremque officia aut fugiat facere qui galisum provident sed dolores amet qui voluptas Quis nam omnis dolorem Lorem ipsum dolor sit amet."
-              options="Psseio a pé"
-              level="Alto"
-              href="/"
-            />
+          <div className="max-w-[600px] lg:w-full lg:max-w-[1200px] bg-white shadow-xl flex flex-col gap-4">
+            {filteredListWhither.map(whither => (
+              <WhitherCard
+                key={whither.id}
+                src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${whither.cover}`}
+                title={whither.title}
+                description={whither.description}
+                options={whither.type_tour? whither.type_tour : ""}
+                level={whither.level? whither.level : ""}
+                href={`destinos/${whither.id}`}
+              />
+            ))}
           </div>
         </div>
       </div>

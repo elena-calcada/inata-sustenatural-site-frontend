@@ -1,8 +1,10 @@
 export interface TourGroup {
-  title: string;
+  id: string;
   location: string;
-  description: string;
   type_tour?: string;
   level?: string;
   season?: string;
+  description: string;
+  title: string;
+  cover: string;
 }
