@@ -24,7 +24,7 @@ export default function WhitherListSection({ listWhither }: WhitherProps) {
           >
             Nossos destinos
           </motion.h2>
-          <div className="max-w-[600px] lg:w-full lg:max-w-[1200px] bg-white shadow-xl flex flex-col gap-4">
+          <div className="max-w-[600px] lg:w-full lg:max-w-[1200px] bg-white flex flex-col gap-4">
             {filteredListWhither.map(whither => (
               <WhitherCard
                 key={whither.id}

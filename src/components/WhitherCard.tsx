@@ -23,7 +23,7 @@ export default function WhitherCard({
   }: WhitherCardProps) {
   return(
     <motion.div
-    className="w-full"
+    className="w-full shadow-xl"
     variants={fadeIn("up", 0.6)}
     initial="hidden"
     whileInView={"show"}

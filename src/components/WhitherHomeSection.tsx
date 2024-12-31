@@ -33,7 +33,7 @@ export default function WhitherHomeSection() {
           viewport={{ once: false, amount: 0.2 }}
         >
           <Link
-            href="/destinos"
+            href="https://wa.me/5527992467274?text=Olá,%20Wallace!%20Cheguei%20aqui%20por%20meio%20do%20seu%20site.%20Gostaria%20de%20saber%20mais%20sobre%20os%20passeios."
             className="flex gap-2 items-center justify-center py-4 px-8 bg-greenButtonHover text-greenButtonText font-bold text-lg xs:text-lg rounded-xl hover:bg-greenButtonBg transition-all"
         >
             <FaWhatsapp className="h-6 w-6"/>
