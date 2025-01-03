@@ -1,7 +1,15 @@
 import Tours from "@/components/Tours";
 import { api } from "@/services/api";
 
-export const dynamic = "force-dynamic";
+async function getTour(tourId: string) {
+  try {
+    const response = await api.get(`/tours/${tourId}`)
+
+    return response.data.tour
+  } catch (err) {
+    return null
+  }
+}
 
 async function listImages(tourId: string) {
   try {
@@ -12,15 +20,26 @@ async function listImages(tourId: string) {
   }
 }
 
+async function listTourItems(tourId: string) {
+  try {
+    const response = await api.get(`/tours/${tourId}/items`)
+    return response.data
+  } catch (err) {
+    return []
+  }
+}
+
 export default async function TourOptions({params }: { params: Promise<{ tourId: string }> }) {
   const { tourId } = await params;
   const images = await listImages(tourId)
+  const tourItems = await listTourItems(tourId)
+  const tourGroup = await getTour(tourId)
 
   return(
-    <main>
-      <Tours
-        images={images}
-      />
-    </main>
+    <Tours
+      images={images}
+      tourItems={tourItems}
+      tourGroup={tourGroup}
+    />
   )
 }

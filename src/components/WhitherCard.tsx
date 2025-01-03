@@ -11,6 +11,7 @@ interface WhitherCardProps {
   options: string;
   level: string;
   href: string;
+  text: string;
 }
 
 export default function WhitherCard({
@@ -19,7 +20,8 @@ export default function WhitherCard({
    level,
    options,
    src,
-   title
+   title,
+   text
   }: WhitherCardProps) {
   return(
     <motion.div
@@ -52,7 +54,7 @@ export default function WhitherCard({
             href={href}
             className="border-[3px] border-blueColor-base px-3 py-2 rounded-md text-blueColor-base font-bold hover:bg-blueColor-base hover:text-white transition-all"
           >
-            Ver opções
+            {text}
           </Link>
         </div>
       </div>
