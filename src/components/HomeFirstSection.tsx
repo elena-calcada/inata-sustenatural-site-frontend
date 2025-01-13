@@ -36,7 +36,7 @@ export default function HomeFirstSection() {
           whileInView={"show"}
           viewport={{ once: false, amount: 0.2 }}
         >
-          Os melhores pesseios turísticos da Grande Vitória / ES. Atividades, diversão, aventuras e vivências ao ar livre.
+          Especialista em ecoturismo, ofereço atividades, diversão e vivências ao ar livre, sem deixar vestígios, somente o desejo de voltar.
         </motion.p>
         <motion.div
           variants={fadeIn("up", 0.8)}
@@ -48,7 +48,7 @@ export default function HomeFirstSection() {
             href="/destinos"
             className="flex gap-4 items-center justify-center py-4 px-8 bg-greenButtonHover text-greenButtonText font-bold text-2xl xs:text-lg rounded-xl hover:bg-greenButtonBg transition-all"
         >
-            <span>Nossos Passeios</span>
+            <span>Conhecer passeios</span>
             <FaArrowRightLong/>
           </Link>
         </motion.div>

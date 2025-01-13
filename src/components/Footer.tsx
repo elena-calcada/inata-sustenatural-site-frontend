@@ -24,7 +24,7 @@ const Footer = () => {
 
           <div className="flex flex-col gap-3">
             <h3 className="text-center font-bold">
-              AVENTURE-SE!!!
+              Permita-se essa experiência!
             </h3>
 
             <span className="text-center w-[250px]">Fale com a gente, tire suas dúvidas e reserve seu passeio.</span>
