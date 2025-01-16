@@ -34,7 +34,7 @@ export default function WhitherListSection({ listWhither }: WhitherProps) {
                 options={whither.type_tour? whither.type_tour : ""}
                 level={whither.level? whither.level : ""}
                 href={`destinos/${whither.id}`}
-                text="Ver opções"
+                text="Listar passeios"
               />
             ))}
           </div>

@@ -37,6 +37,7 @@ export default {
         backgroundFooter: "#4597B1",
         blueDarkFooter: "#167796",
         grayDark: '#4E4A49',
+        grayLight: "#D9D9D9",
         greenButtonBg: '#D1E74B',
         greenButtonText: '#2D490A',
         greenButtonHover: '#DFFF1B',
