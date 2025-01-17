@@ -51,14 +51,16 @@ export default function TourDetail({ images, tourItem, tourGroup }: TourDetailPr
                 <div className="">
                   <p>{tourItem.long_description}</p>
                 </div>
-                <Link
-                  href="https://wa.me/5527992467274?text=Olá,%20Wallace!%20Cheguei%20aqui%20por%20meio%20do%20seu%20site.%20Gostaria%20de%20saber%20mais%20sobre%20os%20passeios."
-                  target="_blank"
-                  className="border-[3px] border-blueColor-base px-3 py-2 rounded-md text-blueColor-base font-bold hover:bg-blueColor-base hover:text-white transition-all flex items-center justify-center gap-1"
-                >
-                  <FaWhatsapp size={20} className="text-primary" />
-                  Reservar
-                </Link>
+                <div className="flex items-center justify-center mt-4 lg:mt-0">
+                  <Link
+                    href="https://wa.me/5527992467274?text=Olá,%20Wallace!%20Cheguei%20aqui%20por%20meio%20do%20seu%20site.%20Gostaria%20de%20saber%20mais%20sobre%20os%20passeios."
+                    target="_blank"
+                    className="border-[3px] border-blueColor-base px-10 lg:px-3 py-2 rounded-md text-blueColor-base font-bold hover:bg-blueColor-base hover:text-white transition-all flex items-center justify-center gap-1"
+                  >
+                    <FaWhatsapp size={20} className="text-primary" />
+                    Reservar
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -73,42 +75,52 @@ export default function TourDetail({ images, tourItem, tourGroup }: TourDetailPr
               </div>
             )}
 
-            <div className="w-full border-t border-grayLight py-8 flex items-center lg:items-start lg:gap-0 lg:justify-between">
-              <div className="w-1/2 sm:w-1/3 lg:w-1/5">
-                <h3 className="text-xl font-bold">Data</h3>
-              </div>
-              <div className="flex items-center justify-start w-1/2 sm:w-2/3 lg:w-4/5">
-                <p>{tourItem.date}</p>
-              </div>
-            </div>
-
-            <div className="w-full border-t border-grayLight py-8 flex flex-col gap-4 lg:gap-0 lg:flex-row lg:items-start lg:justify-between">
-              <div className="w-full lg:w-1/5">
-                <h3 className="text-xl font-bold">Ponto de Encontro</h3>
-              </div>
-              <div className="w-full flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between lg:gap-16 lg:w-4/5">
-                <div className="flex flex-col gap-4 lg:gap-1">
-                  <span>{tourItem.meeting_point_name}</span>
-                  <div className="w-full flex items-center gap-1">
-                    <div>
-                      <LuMapPin size={22} className="text-textColor" />
-                    </div>
-                    <div>
-                      <span className="">{tourItem.meeting_point_address}</span>
-                    </div>
-                  </div>
-                  <span>{tourItem.meeting_point_description}</span>
+            {tourItem.date && (
+              <div className="w-full border-t border-grayLight py-8 flex items-center lg:items-start lg:gap-0 lg:justify-between">
+                <div className="w-1/2 sm:w-1/3 lg:w-1/5">
+                  <h3 className="text-xl font-bold">Data</h3>
                 </div>
-                <Link
-                  href="https://www.google.com.br/maps/place/R.+das+Paneleiras,+55+-+Goiabeiras,+Vit%C3%B3ria+-+ES,+29075-105/@-20.2696367,-40.3057538,17z/data=!3m1!4b1!4m6!3m5!1s0xb8180f481e505b:0x838d887e07b7a61b!8m2!3d-20.2696418!4d-40.3031789!16s%2Fg%2F11b8zd4bxs?entry=ttu&g_ep=EgoyMDI1MDExMC4wIKXMDSoJLDEwMjExMjMzSAFQAw%3D%3D"
-                  target="_blank"
-                  className="text-sm bg-blueColor-base px-3 py-2 rounded-md text-white font-bold hover:bg-blueColor-dark transition-all flex items-center justify-center gap-1"
-                >
-                  <LuMapPin size={18} className="text-primary" />
-                  Localização
-                </Link>
+                <div className="flex items-center justify-start w-1/2 sm:w-2/3 lg:w-4/5">
+                  <p>{tourItem.date}</p>
+                </div>
               </div>
-            </div>
+            )}
+
+            {(tourItem.meeting_point_name || tourItem.meeting_point_address || tourItem.meeting_point_description) && (
+              <div className="w-full border-t border-grayLight py-8 flex flex-col gap-4 lg:gap-0 lg:flex-row lg:items-start lg:justify-between">
+                <div className="w-full lg:w-1/5">
+                  <h3 className="text-xl font-bold">Ponto de Encontro</h3>
+                </div>
+                <div className="w-full flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between lg:gap-16 lg:w-4/5">
+                  <div className="flex flex-col gap-4 lg:gap-1">
+                    <span>{tourItem.meeting_point_name}</span>
+                    {tourItem.meeting_point_address && (
+                      <div className="w-full flex items-center gap-1">
+                        <div>
+                          <LuMapPin size={22} className="text-textColor" />
+                        </div>
+                        <div>
+                          <span className="">{tourItem.meeting_point_address}</span>
+                        </div>
+                      </div>
+                    )}
+                    <span>{tourItem.meeting_point_description}</span>
+                  </div>
+                  {tourItem.meeting_point_address && (
+                    <div className="flex items-center justify-center mt-4 lg:mt-0">
+                      <Link
+                        href={`https://www.google.com/maps/place/${encodeURIComponent(tourItem.meeting_point_address)}`}
+                        target="_blank"
+                        className="text-sm bg-blueColor-base px-10 lg:px-3 py-2 rounded-md text-white font-bold hover:bg-blueColor-dark transition-all flex items-center justify-center gap-1"
+                      >
+                        <LuMapPin size={18} className="text-primary" />
+                        Localização
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
 
             <div className="w-full border-t border-grayLight py-8 flex flex-col gap-4 lg:gap-0 lg:flex-row lg:items-start lg:justify-between">
               <div className="w-full lg:w-1/5">
@@ -122,22 +134,28 @@ export default function TourDetail({ images, tourItem, tourGroup }: TourDetailPr
                     )}
                     <div><span className="font-semibold">Percurso: </span><span>{tourItem.route_size}</span></div>
                     <div><span className="font-semibold">Duração: </span><span>{tourItem.duration}</span></div>
-                    <div><span className="font-semibold">Horário: </span><span>{tourItem.meeting_point_hour}</span></div>
+                    {tourItem.meeting_point_hour && (
+                      <div><span className="font-semibold">Horário: </span><span>{tourItem.meeting_point_hour}</span></div>
+                    )}
                     {tourItem.level && (
                       <div><span className="font-semibold">Nível de Esforço: </span><span>{tourItem.level}</span></div>
                     )}
                     <div><span className="font-semibold">É permitido pet? </span><span>{tourItem.pet === "SIM" ? "Sim" : "Não"}</span></div>
-                    <div><span className="font-semibold">Observação: </span><span>{tourItem.note}</span></div>
+                    {tourItem.note && (
+                      <div><span className="font-semibold">Observação: </span><span>{tourItem.note}</span></div>
+                    )}
                   </div>
                 </div>
-                <Link
-                  href="https://wa.me/5527992467274?text=Olá,%20Wallace!%20Cheguei%20aqui%20por%20meio%20do%20seu%20site.%20Gostaria%20de%20saber%20mais%20sobre%20os%20passeios."
-                  target="_blank"
-                  className="border-[3px] border-blueColor-base px-3 py-2 rounded-md text-blueColor-base font-bold hover:bg-blueColor-base hover:text-white transition-all flex items-center justify-center gap-1"
-                >
-                  <FaWhatsapp size={20} className="text-primary" />
-                  Reservar
-                </Link>
+                <div className="flex items-center justify-center mt-4 lg:mt-0">
+                  <Link
+                    href="https://wa.me/5527992467274?text=Olá,%20Wallace!%20Cheguei%20aqui%20por%20meio%20do%20seu%20site.%20Gostaria%20de%20saber%20mais%20sobre%20os%20passeios."
+                    target="_blank"
+                    className="border-[3px] border-blueColor-base px-10 lg:px-3 py-2 rounded-md text-blueColor-base font-bold hover:bg-blueColor-base hover:text-white transition-all flex items-center justify-center gap-1"
+                  >
+                    <FaWhatsapp size={20} className="text-primary" />
+                    Reservar
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -157,14 +175,16 @@ export default function TourDetail({ images, tourItem, tourGroup }: TourDetailPr
                     <div><span className="font-semibold">Doadores de Sangue: </span><span>25% de desconto, mediante apresentação do comprovante.</span></div>
                   </div>
                 </div>
-                <Link
-                  href="https://wa.me/5527992467274?text=Olá,%20Wallace!%20Cheguei%20aqui%20por%20meio%20do%20seu%20site.%20Gostaria%20de%20saber%20mais%20sobre%20os%20passeios."
-                  target="_blank"
-                  className="text-sm bg-blueColor-base px-3 py-2 rounded-md text-white font-bold hover:bg-blueColor-dark transition-all flex items-center justify-center gap-1"
-                >
-                  <FaWhatsapp size={18} className="text-primary" />
-                  Dúvidas
-                </Link>
+                <div className="flex items-center justify-center mt-4 lg:mt-0">
+                  <Link
+                    href="https://wa.me/5527992467274?text=Olá,%20Wallace!%20Cheguei%20aqui%20por%20meio%20do%20seu%20site.%20Gostaria%20de%20saber%20mais%20sobre%20os%20passeios."
+                    target="_blank"
+                    className="text-sm bg-blueColor-base px-10 lg:px-3 py-2 rounded-md text-white font-bold hover:bg-blueColor-dark transition-all flex items-center justify-center gap-1"
+                  >
+                    <FaWhatsapp size={18} className="text-primary" />
+                    Dúvidas
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -187,14 +207,16 @@ export default function TourDetail({ images, tourItem, tourGroup }: TourDetailPr
                     <div><span>Caso ocorra algum problema pessoal que impeça seu comparecimento, favor entrar em contato o quanto antes.</span></div>
                   </div>
                 </div>
-                <Link
-                  href="https://wa.me/5527992467274?text=Olá,%20Wallace!%20Cheguei%20aqui%20por%20meio%20do%20seu%20site.%20Gostaria%20de%20saber%20mais%20sobre%20os%20passeios."
-                  target="_blank"
-                  className="text-sm bg-blueColor-base px-3 py-2 rounded-md text-white font-bold hover:bg-blueColor-dark transition-all flex items-center justify-center gap-1"
-                >
-                  <FaWhatsapp size={18} className="text-primary" />
-                  Dúvidas
-                </Link>
+                <div className="flex items-center justify-center mt-4 lg:mt-0">
+                  <Link
+                    href="https://wa.me/5527992467274?text=Olá,%20Wallace!%20Cheguei%20aqui%20por%20meio%20do%20seu%20site.%20Gostaria%20de%20saber%20mais%20sobre%20os%20passeios."
+                    target="_blank"
+                    className="text-sm bg-blueColor-base px-10 lg:px-3 py-2 rounded-md text-white font-bold hover:bg-blueColor-dark transition-all flex items-center justify-center gap-1"
+                  >
+                    <FaWhatsapp size={18} className="text-primary" />
+                    Dúvidas
+                  </Link>
+                </div>
               </div>
             </div>
 
