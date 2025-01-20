@@ -45,7 +45,7 @@ export default function WhitherCard({
       <div className="lg-xl:w-2/3 xl:w-3/4 flex flex-col gap-4">
         <span className="font-bold text-xl text-center lg:text-start">{ title }</span>
         <p className="text-center lg:text-start">{ description }</p>
-        <div className="flex flex-col gap-4 items-center sm:flex-row sm:justify-between sm:gap-0">
+        <div className="flex flex-col gap-4 items-center lg:flex-row lg:justify-between lg:gap-0">
           <div>
             <p className="mb-[2px] italic">Opcões: <span className="font-semibold italic">{ options }</span></p>
             <p className="italic">Nível de esforço: <span className="font-semibold italic">{ level }</span></p>

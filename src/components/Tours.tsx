@@ -33,7 +33,7 @@ export default function Tours({ images, tourItems, tourGroup }: ImageSliderProps
               whileInView={"show"}
               viewport={{ once: false, amount: 0.2 }}
             >
-              {`Passeios para o ${tourGroup.title}`}
+              {`Opções de passeios para o ${tourGroup.title}`}
             </motion.h1>
             <div className="bg-background max-w-[600px] lg:w-full lg:max-w-[1200px] flex flex-col gap-4">
               {filteredtourItems.map(item => (
