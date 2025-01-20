@@ -45,7 +45,7 @@ export default function HomeFirstSection() {
           viewport={{ once: false, amount: 0.2 }}
         >
           <Link
-            href="/destinos"
+            href="/passeios"
             className="flex gap-4 items-center justify-center py-4 px-8 bg-greenButtonHover text-greenButtonText font-bold text-2xl xs:text-lg rounded-xl hover:bg-greenButtonBg transition-all"
         >
             <span>Conhecer passeios</span>

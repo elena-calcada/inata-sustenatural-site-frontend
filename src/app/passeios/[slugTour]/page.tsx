@@ -1,10 +1,9 @@
 import Tours from "@/components/Tours";
 import { api } from "@/services/api";
 
-async function getTour(tourId: string) {
+async function getTour(slugTour: string) {
   try {
-    const response = await api.get(`/tours/${tourId}`)
-
+    const response = await api.get(`/${slugTour}`)
     return response.data.tour
   } catch (err) {
     return null
@@ -29,11 +28,11 @@ async function listTourItems(tourId: string) {
   }
 }
 
-export default async function TourOptions({params }: { params: Promise<{ tourId: string }> }) {
-  const { tourId } = await params;
-  const images = await listImages(tourId)
-  const tourItems = await listTourItems(tourId)
-  const tourGroup = await getTour(tourId)
+export default async function TourOptions({params }: { params: Promise<{ slugTour: string }> }) {
+  const { slugTour } = await params;
+  const tourGroup = await getTour(slugTour)
+  const images = await listImages(tourGroup.id)
+  const tourItems = await listTourItems(tourGroup.id)
 
   return(
     <Tours

@@ -16,6 +16,8 @@ interface TourDetailProps {
 }
 
 export default function TourDetail({ images, tourItem, tourGroup }: TourDetailProps) {
+  console.log(tourItem)
+  console.log(tourGroup)
   return(
     <main>
       <section className="mt-[75px] w-full h-[32vh]">

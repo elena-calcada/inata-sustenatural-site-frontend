@@ -7,4 +7,5 @@ export interface TourGroup {
   description: string;
   title: string;
   cover: string;
+  slug: string;
 }

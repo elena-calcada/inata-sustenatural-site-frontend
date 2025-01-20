@@ -27,7 +27,7 @@ export default function WhitherHomeSection() {
           whileInView={"show"}
           viewport={{ once: false, amount: 0.2 }}
         >
-          Nossos passeios
+          Vem passear comigo!
         </motion.h1>
         <motion.p
           className="p !font-medium text-center !text-white !text-base max-w-[400px] xs:!text-base xs:max-w-[400px] lg:max-w-[700px] sm-lg:!text-xl lg:!text-lg lg:text-start"

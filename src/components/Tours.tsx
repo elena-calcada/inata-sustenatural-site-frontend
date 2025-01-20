@@ -44,7 +44,7 @@ export default function Tours({ images, tourItems, tourGroup }: ImageSliderProps
                   description={item.short_description}
                   options={item.type? item.type : ""}
                   level={item.level? item.level : ""}
-                  href={`${tourGroup.id}/${item.id}`}
+                  href={`${tourGroup.slug}/${item.slug}`}
                   text="Ver detalhes"
                 />
               ))}

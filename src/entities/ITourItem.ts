@@ -21,4 +21,5 @@ export interface ITourItem {
   important: string;
   cover: string;
   available: string;
+  slug: string;
 }

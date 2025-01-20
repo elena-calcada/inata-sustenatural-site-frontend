@@ -22,7 +22,7 @@ export default function WhitherListSection({ listWhither }: WhitherProps) {
             whileInView={"show"}
             viewport={{ once: false, amount: 0.2 }}
           >
-            Nossos destinos
+            Para onde vamos?
           </motion.h2>
           <div className="bg-background max-w-[600px] lg:w-full lg:max-w-[1200px] flex flex-col gap-4">
             {filteredListWhither.map(whither => (
@@ -33,7 +33,7 @@ export default function WhitherListSection({ listWhither }: WhitherProps) {
                 description={whither.description}
                 options={whither.type_tour? whither.type_tour : ""}
                 level={whither.level? whither.level : ""}
-                href={`destinos/${whither.id}`}
+                href={`passeios/${whither.slug}`}
                 text="Listar passeios"
               />
             ))}
