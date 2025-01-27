@@ -1,10 +1,11 @@
 import Tours from "@/components/Tours";
-import { api } from "@/services/api";
 
 async function getTour(slugTour: string) {
   try {
-    const response = await api.get(`/${slugTour}`)
-    return response.data.tour
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/${slugTour}`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${slugTour}`, { cache: 'no-store' })
+    const data = await response.json()
+    return data.tour
   } catch (err) {
     return null
   }
@@ -12,8 +13,10 @@ async function getTour(slugTour: string) {
 
 async function listImages(tourId: string) {
   try {
-    const response = await api.get(`/images/${tourId}`)
-    return response.data
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/${tourId}`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${tourId}`, { cache: 'no-store' })
+    const data = await response.json()
+    return data
   } catch (err) {
     return []
   }
@@ -21,8 +24,9 @@ async function listImages(tourId: string) {
 
 async function listTourItems(tourId: string) {
   try {
-    const response = await api.get(`/tours/${tourId}/items`)
-    return response.data
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tours/${tourId}/items`, { cache: 'no-store' })
+    const data = await response.json()
+    return data
   } catch (err) {
     return []
   }

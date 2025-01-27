@@ -1,12 +1,12 @@
 import WhitherHomeSection from "@/components/WhitherHomeSection";
 import WhitherListSection from "@/components/WhitherListSection";
 import { TourGroup } from "@/entities/TourGroup";
-import { api } from "@/services/api";
 
 async function getToursGroup(): Promise<TourGroup[] | []> {
   try{
-    const response = await api.get("/tours")
-    return response.data.tours
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tours`, { cache: 'no-store' })
+    const data = await response.json()
+    return data.tours
   } catch (err) {
     return []
   }
