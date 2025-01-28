@@ -16,14 +16,14 @@ export default function ImagesSlideNavigation({ isBeginning, isEnd }: ImagesSlid
         disabled={isBeginning}
         className="enabled:hover:bg-black/30 transition-colors p-1 rounded-full disabled:opacity-40"
       >
-        <BsChevronLeft className="w-12 h-12 text-white pr-1"/>
+        <BsChevronLeft className="w-16 h-16 text-white pr-1"/>
       </button>
       <button
         onClick={() => swiper.slideNext()}
         disabled={isEnd}
         className="enabled:hover:bg-black/30 transition-colors p-1 rounded-full disabled:opacity-40"
       >
-        <BsChevronRight className="w-12 h-12 text-white pl-1"/>
+        <BsChevronRight className="w-16 h-16 text-white pl-1"/>
       </button>
     </div>
   )

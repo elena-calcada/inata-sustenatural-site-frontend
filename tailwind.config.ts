@@ -25,7 +25,7 @@ export default {
       'lg-max': { max: '1279px' },
       'lg-xl': { min: '1024px', max: '1279px' },
       xl: '1280px',
-      '2xl': '1440px'
+      '2xl': '1400px'
     },
     extend: {
       colors: {

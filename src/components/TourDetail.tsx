@@ -8,6 +8,7 @@ import Link from "next/link";
 import { FaCircle, FaWhatsapp } from "react-icons/fa";
 import { LuMapPin } from "react-icons/lu";
 import ImageSlider from "./ImageSlider";
+import { NavLink } from "./NavLink";
 
 interface TourDetailProps {
   images: IImage[];
@@ -16,16 +17,27 @@ interface TourDetailProps {
 }
 
 export default function TourDetail({ images, tourItem, tourGroup }: TourDetailProps) {
-  console.log(tourItem)
-  console.log(tourGroup)
   return(
-    <main>
+    <main className="bg-background">
       <section className="mt-[75px] w-full h-[32vh]">
         <ImageSlider
           images={images}
         />
       </section>
-      <section className="w-full bg-background">
+
+      <div className="max-w-[1400px] pt-2 2xl:px-0 px-4 mx-auto">
+        <nav className="w-full text-base font-medium">
+          <NavLink href="/">home</NavLink>
+          <span className="text-blueColor-dark"> / </span>
+          <NavLink href="/passeios">passeios</NavLink>
+          <span className="text-blueColor-dark"> / </span>
+          <NavLink href={`/passeios/${tourGroup.slug}`}>{tourGroup.slug}</NavLink>
+          <span className="text-blueColor-dark"> / </span>
+          <NavLink href={`/passeios/${tourGroup.slug}/${tourItem.slug}`}>{tourItem.slug}</NavLink>
+        </nav>
+      </div>
+
+      <section className="w-full">
         <div className="overflow-hidden w-full h-full flex flex-col items-center justify-center">
           <motion.div
             className="container !py-16 flex flex-col items-center md:items-start justify-center"
@@ -169,7 +181,7 @@ export default function TourDetail({ images, tourItem, tourGroup }: TourDetailPr
                 <div className="">
                   <div className="flex flex-col gap-4 lg:gap-1">
                     {tourItem.price !== 0 && (
-                      <div><span className="font-semibold text-xl text-blueColor-base">{`R$ ${tourItem.price},00`}</span></div>
+                      <div><span className="font-semibold text-xl text-blueColor-base">{`A partir de R$ ${tourItem.price},00`}</span></div>
                     )}
                     <div><span className="font-semibold">Forma de pagamento: </span><span>50% antecipado e o restante no embarque, ou 100% adiantado.</span></div>
                     <div><span className="font-semibold">Crianças entre 7 e 12 anos: </span><span>50% de desconto.</span></div>
