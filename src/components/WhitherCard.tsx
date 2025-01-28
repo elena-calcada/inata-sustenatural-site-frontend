@@ -42,13 +42,13 @@ export default function WhitherCard({
           className="z-40 absolute w-auto"
         />
       </div>
-      <div className="lg-xl:w-2/3 xl:w-3/4 flex flex-col gap-4">
-        <span className="font-bold text-xl text-center lg:text-start">{ title }</span>
+      <div className="lg-xl:w-2/3 xl:w-3/4 flex flex-col gap-6">
+        <span className="font-bold text-2xl text-center lg:text-start">{ title }</span>
         <p className="text-center lg:text-start">{ description }</p>
-        <div className="flex flex-col gap-4 items-center lg:flex-row lg:justify-between lg:gap-0">
-          <div>
-            <p className="mb-[2px] italic">Opcões: <span className="font-semibold italic">{ options }</span></p>
-            <p className="italic">Nível de esforço: <span className="font-semibold italic">{ level }</span></p>
+        <div className="flex flex-col gap-4 items-center lg:flex-row lg:justify-between">
+          <div className="w-full lg:max-w-[380px] xl:max-w-[600px] flex flex-col gap-2 text-base">
+            <p className="italic font-semibold">Opcões: <span className="font-normal italic">{ options }</span></p>
+            <p className="italic font-semibold">Nível de esforço: <span className="font-normal italic">{ level }</span></p>
           </div>
           <Link
             href={href}

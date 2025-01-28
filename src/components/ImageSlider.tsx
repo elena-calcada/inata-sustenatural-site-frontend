@@ -13,8 +13,8 @@ interface ImageSliderProps {
 export default function ImageSlider({ images }: ImageSliderProps) {
   const { sliderState, setSliderState } = imagesSlideButtonsController()
   return(
-    <div className="h-full relative w-full flex items-center justify-center z-30 mx-auto">
-      <div className="absolute w-full max-w-[1400px] z-40 h-full bg-background">
+    <div className="h-full relative w-full flex items-center justify-center z-30 mx-auto bg-background">
+      <div className="absolute w-full max-w-[1400px] z-40 h-full">
         <Swiper
           spaceBetween={6}
           breakpoints={{
